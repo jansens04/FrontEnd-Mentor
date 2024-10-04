@@ -1,0 +1,134 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+:root {
+  --pink-700: #f9eeff;
+  --white: #ffffff;
+  --purple: #321436;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: var(--pink-700);
+  display: grid;
+  place-items: center;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background: url('../assets/images/background-pattern-desktop.svg');
+}
+
+.accordion-content {
+  position: relative;
+  z-index: 999;
+  background: var(--white);
+  max-width: 600px;
+  margin: auto;
+  padding: 3rem 2rem;
+  border-radius: 1rem;
+}
+
+.accordion-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.accordion-header > img {
+  height: 1.7rem;
+}
+
+.accordion-header > h1 {
+  font-size: 2.6rem;
+  color: var(--purple);
+}
+
+.accordion .heading {
+  display: flex;
+  gap: 1rem;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading > h3 {
+  font-size: 1.1rem;
+}
+
+.heading > img {
+  cursor: pointer;
+  transform: scale(1);
+
+  transition: all 260ms ease-in-out;
+}
+
+.heading > img:active {
+  transform: scale(0.9);
+}
+
+.accordion li > p {
+  margin-block: 1rem;
+  line-height: 1.3;
+  color: #848385;
+  max-height: 0px;
+  transition: all 280ms ease-in-out;
+  opacity: 0;
+  transform-origin: top;
+}
+
+.accordion li > p.active {
+  max-height: 400px;
+  opacity: 1;
+  transform-origin: bottom;
+}
+
+@media (max-width: 700px) {
+  .accordion-content {
+    margin-inline: 1rem;
+  }
+}
+
+/* div {
+  position: relative;
+  min-height: 400vh;
+  max-width: 600px;
+  margin: 25rem auto;
+}
+
+p {
+  font-weight: 500;
+  line-height: 1.4;
+  font-size: 1.7rem;
+  background: linear-gradient(to right, #202020, #202020), linear-gradient(to right, #969595, #969595);
+  background-repeat: no-repeat;
+  background-clip: text;
+  display: inline;
+  color: transparent;
+  animation: animateText 1ms both linear;
+  animation-timeline: scroll();
+}
+
+@keyframes animateText {
+  from {
+    background-position-x: -125rem, 0;
+  }
+} */
